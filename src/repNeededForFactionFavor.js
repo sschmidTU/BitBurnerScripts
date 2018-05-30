@@ -12,8 +12,7 @@ formula adapted from (Faction.js/getFavorGain):
     @author sschmidTU
 */
 
-function repNeededForFactionFavor(targetFavor,currentFavor) {
-    
+function repNeededForFactionFavor(targetFavor,currentFavor) {  
     let favorGain = 0;
     let rep = 0;
     
@@ -22,6 +21,7 @@ function repNeededForFactionFavor(targetFavor,currentFavor) {
     
     let reqdRep = FactionReputationToFavorBase *
                       Math.pow(FactionReputationToFavorMult, currentFavor);
+    
     while (currentFavor + favorGain < targetFavor) {
         rep += reqdRep;
         ++favorGain;
