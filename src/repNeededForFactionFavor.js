@@ -35,5 +35,5 @@ export async function main(ns) {
     let targetFavor = ns.args[0];
     let currentFavor = ns.args[1];
     
-    ns.tprint('required rep: ' + repNeededForFavor(targetFavor, currentFavor));
+    ns.tprint('required rep: ' + repNeededForFactionFavor(targetFavor, currentFavor));
 }
