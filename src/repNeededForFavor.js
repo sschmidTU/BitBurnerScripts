@@ -3,7 +3,7 @@ usage: run repNeededForFavor.js favorTarget
     returns how much reputation you need in total with a faction or company to reach the favor favorTarget.
     (as of v0.37.1, the constans are the same for factions and companies)
 
-formula adapted from Faction.js/getFavorGain and Company.js/getFavorGain and Constants.js:
+formula adapted from Faction.js/getFavorGain(), Company.js/getFavorGain() and Constants.js:
     https://github.com/danielyxie/bitburner/blob/master/src/Faction.js
     
     also available as netscript 1.0 script (running in Firefox)
