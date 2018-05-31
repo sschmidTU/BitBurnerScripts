@@ -20,8 +20,7 @@ function repNeededForFavor(targetFavor) {
     let ReputationToFavorMult = 1.02;
     
     let reqdRep = ReputationToFavorBase;
-    let currentFavor = 0;
-    while (currentFavor + favorGain < targetFavor) {
+    while (favorGain < targetFavor) {
         rep += reqdRep;
         ++favorGain;
         reqdRep *= ReputationToFavorMult;
