@@ -1,0 +1,35 @@
+
+/*
+usage: run repNeededForFavor.script favorTarget
+    returns how much reputation you need in total with a faction or company to reach the favor favorTarget.
+    (as of v0.37.1, the constans are the same for factions and companies)
+    
+formula adapted from Faction.js/getFavorGain(), Company.js/getFavorGain() and Constants.js:
+    https://github.com/danielyxie/bitburner/blob/master/src/Faction.js
+    
+also available as netscript 2.0 js-script
+    https://github.com/sschmidTU/BitBurnerScripts/
+    @author sschmidTU
+*/
+
+function repNeededForFavor(targetFavor) {
+    favorGain = 0;
+    rep = 0;
+    
+    ReputationToFavorBase = 500;
+    ReputationToFavorMult = 1.02;
+    
+    reqdRep = ReputationToFavorBase;
+    while(favorGain < targetFavor) {
+        rep += reqdRep;
+        ++favorGain;
+        reqdRep *= ReputationToFavorMult;
+    }
+    
+    return rep;
+}
+
+targetFavor = args[0];
+repNeeded = repNeededForFavor(targetFavor);
+tprint('you need ' + repNeeded.toLocaleString() + ' total reputation with a faction or company'
+        + ' to get to ' + targetFavor + ' favor.');
